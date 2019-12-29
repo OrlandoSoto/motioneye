@@ -2,14 +2,14 @@
 version: "3.5"
 services:
   motioneye:
-    image: ccrisan/motioneye:master-amd64  # Change to ccrisan/motioneye:master-armhf for ARM chips (Pi etc.)
+    image: ccrisan/motioneye:master-armhf  # Change to ccrisan/motioneye:master-armhf for ARM chips (Pi etc.)
     ports:
       - "8081:8081"
       - "8765:8765"
     volumes:
-      - etc_motioneye:/etc/motioneye
-      - var_lib_motioneye:/var/lib/motioneye
-
-volumes:
-  etc_motioneye:
-  var_lib_motioneye:
+      - /etc/motioneye:/etc/motioneye
+      - /var/lib/motioneye:/var/lib/motioneye
+      - /etc/localtime:/etc/localtime
+      - /home/pi/Camera1/:/home/pi/Camera1/
+    devices:
+      - "/dev/video0:/dev/video0"
