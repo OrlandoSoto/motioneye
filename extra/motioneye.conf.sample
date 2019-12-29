@@ -9,7 +9,7 @@ run_path /var/run
 log_path /var/log
 
 # default output path for media files (must be writable by motionEye)
-media_path /var/lib/motioneye
+media_path /home/pi/Camera1
 
 # the log level (use quiet, error, warning, info or debug)
 log_level info
